@@ -32,6 +32,12 @@ def download_default_clip_interrogate_categories(content_dir):
     category_types = ["artists", "flavors", "mediums", "movements"]
 
     try:
+        proxy                     = 'http://192.168.1.4:8899'
+        os.environ['http_proxy']  = proxy
+        os.environ['HTTP_PROXY']  = proxy
+        os.environ['https_proxy'] = proxy
+        os.environ['HTTPS_PROXY'] = proxy
+
         os.makedirs(tmpdir, exist_ok=True)
         for category_type in category_types:
             torch.hub.download_url_to_file(f"https://raw.githubusercontent.com/pharmapsychotic/clip-interrogator/main/clip_interrogator/data/{category_type}.txt", os.path.join(tmpdir, f"{category_type}.txt"))

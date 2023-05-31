@@ -380,6 +380,12 @@ def install_extension_from_index(url, hide_tags, sort_column, filter_text):
 def refresh_available_extensions(url, hide_tags, sort_column):
     global available_extensions
 
+    proxy                     = 'http://192.168.1.4:8899'
+    os.environ['http_proxy']  = proxy
+    os.environ['HTTP_PROXY']  = proxy
+    os.environ['https_proxy'] = proxy
+    os.environ['HTTPS_PROXY'] = proxy
+
     import urllib.request
     with urllib.request.urlopen(url) as response:
         text = response.read()
