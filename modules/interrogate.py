@@ -30,7 +30,7 @@ def download_default_clip_interrogate_categories(content_dir):
     category_types = ["artists", "flavors", "mediums", "movements"]
 
     try:
-        proxy                     = 'http://192.168.1.4:8899'
+        proxy                     = 'http://192.168.100.1:6152'
         os.environ['http_proxy']  = proxy
         os.environ['HTTP_PROXY']  = proxy
         os.environ['https_proxy'] = proxy

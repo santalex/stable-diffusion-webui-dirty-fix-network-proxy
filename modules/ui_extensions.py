@@ -394,7 +394,7 @@ def install_extension_from_index(url, hide_tags, sort_column, filter_text):
 def refresh_available_extensions(url, hide_tags, sort_column):
     global available_extensions
 
-    proxy                     = 'http://192.168.1.4:8899'
+    proxy                     = 'http://192.168.100.1:6152'
     os.environ['http_proxy']  = proxy
     os.environ['HTTP_PROXY']  = proxy
     os.environ['https_proxy'] = proxy
